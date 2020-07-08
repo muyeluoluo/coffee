@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/public.css">
+    <style>
+        html,body{
+            width:100%;
+        }
+        .head ul li:nth-child(2){
+            border-bottom:6px solid #866961;
+        }
+        .head ul li:nth-child(2){
+            color:#866961;
+        }
+        .banner{
+            width:100%;
+            height:400px;
+            background:url("images/newsban.png");
+        }
+        .content .con{
+            display:flex;
+            justify-content:space-between;
+            font-family:微软雅黑;
+            margin:37px 59px 0px 59px;
+            padding-bottom:6px;
+            border-bottom:1px solid #f2f2f2;
+        }
+        .content .con .cof{
+            width:328px;
+            display:flex;
+            justify-content:space-between;
+        }
+        .content .con .cof div h3{
+            font-size:16px;
+            color:#333;
+        }
+        .content .con .cof h3 span{
+            display:inline-block;
+            height:10px;
+            border-left:2px solid #866961;
+            margin-right:6px;
+        }
+        .content .con .cof div h4{
+            font-size:12px;
+            color:#999;
+        }
+        .content .con .add{
+            font-size:14px;
+            color:#333;
+            padding-top:20px;
+        }
+        .content .con .add span{
+            color:#999;
+        }
+        .content .news{
+            margin:0px 59px 52px 59px;
+            font-family:微软雅黑;
+        }
+        .content .news h1{
+            font-size:20px;
+            color:#333;
+            line-height:92px;
+            text-align:center;
+        }
+        .content .news img{
+            margin:0 auto;
+        }
+        .content .news h2{
+            font-size:16px;
+            color:#333;
+            line-height:34px;
+            text-indent:2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="head main">
+        <img src="images/logo.png">
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="about.html">关于我们</a></li>
+            <li><a href="product.html">产品介绍</a></li>
+            <li><a href="team.html">我们团队</a></li>
+            <li><a href="contact.html">联系我们</a></li>
+        </ul>
+    </div>
+    <div class="banner"></div>
+    <div class="content main">
+        <div class="con">
+            <div class="cof">
+                <div>
+                    <h3><span></span>新闻中心</h3>
+                    <h4>News Center</h4>
+                </div>
+            </div>
+            <div class="add">当前位置&gt;<span>首页&gt;关于我们&gt;</span>新闻中心</div>
+        </div>
+        <div class="news"></div>
+    </div>
+    <div class="footer">
+        <div class="foot main">
+            <p>COPYRIGHT &copy; 重庆DUZU有限公司 | DUZU备案号 33010602001878 号 版权所有：重庆戈登有限公司</p>
+            <img src="images/logo.png">
+        </div>
+    </div>
+    <script>
+        var news=document.querySelector(".content .news");
+        var xhr=new XMLHttpRequest();
+        xhr.open("GET","./about.php?type=2&index1="+sessionStorage["index1"]);
+        xhr.send(null);
+        xhr.onreadystatechange=function (){
+            if(xhr.readyState==4 && xhr.status==200){
+                var arr=JSON.parse(xhr.responseText);
+                var frag=document.createDocumentFragment();
+                var h1=document.createElement("h1");
+                h1.innerHTML=arr.title;
+                frag.appendChild(h1);
+                var img=new Image();
+                img.src=arr.img;
+                frag.appendChild(img);
+                var con=arr.con.split("\n");
+                for(var i=0;i<con.length;i++){
+                    var h2=document.createElement("h2");
+                    h2.innerHTML=con[i];
+                    frag.appendChild(h2);
+                }
+                news.appendChild(frag);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <style>
+        .head ul li:first-child{
+            border-bottom:6px solid #866961;
+        }
+        .head ul li:first-child a{
+            color:#866961;
+        }
+        .banner{
+            height:600px;
+            background:url("images/banner.png") no-repeat;
+            background-size:100% 100%;
+        }
+        .content .top{
+            height:82px;
+            text-align:center;
+        }
+        .content .top h2{
+            font-size:24px;
+            font-family:微软雅黑;
+            color:#333;
+        }
+        .content .top .tit{
+            display:flex;
+            width:252px;
+            justify-content:space-between;
+            margin:8px auto;
+        }
+        .content .top .tit img{
+            height:3px;
+            width:84px;
+            margin:auto 0px;
+        }
+        .content .top .coffee{
+            width:24px;
+            height:26px;
+            margin:0px auto;
+        }
+        .content .con1{
+            height:749px;
+            padding-top:42px;
+            background:url("images/coffeeban.png") no-repeat right top;
+        }
+        .content .con1 .CON{
+            margin-top:54px;
+            display:flex;
+            justify-content:space-around;
+        }
+        .content .con1 .CON .pic{
+            width:400px;
+            height:518px;
+            border:1px solid #333;
+        }
+        .content .con1 .CON .pic img{
+            margin-top:-15px;
+            margin-left:15px;
+        }
+        .content .con1 .CON .txt{
+            width:596px;
+        }
+        .content .con1 .CON .txt h3{
+            font-size:24px;
+            font-family:微软雅黑;
+            color:#393438;
+        }
+        .content .con1 .CON .txt p{
+            width:36px;
+            height:1px;
+            background:#333;
+            margin-top:54px;
+            margin-bottom:16px;
+        }
+        .content .con1 .CON .txt h4{
+            font-size:14px;
+            font-family:微软雅黑;
+            color:#393438;
+            text-indent:2em;
+            line-height:30px;
+            margin-top:14px;
+        }
+        .content .pic2{
+            width:100%;
+        }
+        .content .con2{
+            height:621px;
+            padding-top:42px;
+        }
+        .content .con2 .pdt{
+            display:flex;
+            justify-content:space-between;
+            margin-top:45px;
+        }
+        .content .con2 .pdt div{
+            width:327px;
+            text-align:center;
+        }
+        .content .con2 .pdt div .co{
+            position:relative;
+        }
+        .content .con2 .pdt div .co .sousuo{
+            height:298px;
+            line-height:298px;
+            background:rgba(250, 250, 250, 0.4);
+            display:none;
+            font-size:65px;
+            color:#f0f2f2;
+            position:absolute;
+            top:0px;
+            left:0px;
+            cursor:pointer;
+        }
+        .content .con2 .pdt div .co:hover .sousuo{
+            display:block;
+        }
+        .content .con2 .pdt div h3{
+            font-size:24px;
+            font-family:微软雅黑;
+            color:#333;
+            margin-top:18px;
+        }
+        .content .con2 .pdt div p{
+            width:32px;
+            height:1px;
+            background:#333;
+            margin:8px auto;
+        }
+        .content .con2 .pdt div h4{
+            font-size:14px;
+            font-family:微软雅黑;
+            color:#333;
+            line-height:26px;
+        }
+        .content .con3{
+            height:741px;
+            padding-top:42px;
+            background:#f6f6f6 url("images/teamban.png") no-repeat;
+            background-size:100% 100%;
+        }
+        .content .con3 .Team{
+            display:flex;
+            justify-content:space-between;
+            margin-top:40px;
+        }
+        .content .con3 .Team .introduce{
+            cursor:pointer;
+        }
+        .content .con3 .Team .introduce div{
+            width:243px;
+            height:102px;
+            border:1px solid #999;
+            border-top:none;
+            font-family:微软雅黑;
+            text-align:center;
+        }
+        .content .con3 .Team .introduce .name{
+            font-size:20px;
+            color:#333;
+            line-height:32px;
+        }
+        .content .con3 .Team .introduce .name h3{
+            padding-top:24px;
+        }
+        .content .con3 .Team .introduce .intro{
+            font-size:14px;
+            color:#fff;
+            background:#3a3a3a;
+            display:none;
+        }
+        .content .con3 .Team .introduce .intro p{
+            width:28px;
+            height:1px;
+            background:#fff;
+            margin:4px auto;
+        }
+        .content .con3 .Team .introduce .intro h3{
+            font-size:20px;
+            padding-top:10px;
+        }
+        .content .con3 .Team .introduce .intro h4{
+            line-height:24px;
+        }
+        .content .con3 .Team .introduce:hover .name{
+            display:none;
+        }
+        .content .con3 .Team .introduce:hover .intro{
+            display:block;
+        }
+        .content .con4{
+            height:503px;
+            padding-top:42px;
+        }
+        .content .con4 .map{
+            margin-top:36px;
+            display:flex;
+            justify-content:space-between;
+        }
+        .content .con4 .map .dizhi{
+            display:flex;
+            flex-direction:column;
+            justify-content:space-between;
+        }
+        .content .con4 .map .dizhi div{
+            font-family:微软雅黑;
+        }
+        .content .con4 .map .dizhi div h2{
+            font-size:20px;
+            color:#333;
+        }
+        .content .con4 .map .dizhi div h3{
+            font-size:14px;
+            color:#999;
+            line-height:30px;
+        }
+        .content .con4 .map .dizhi div h4{
+            font-size:14px;
+            color:#333;
+        }
+    </style>
+</head>
+<body>
+    <div class="head main">
+        <img src="images/logo.png">
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="about.html">关于我们</a></li>
+            <li><a href="product.html">产品介绍</a></li>
+            <li><a href="team.html">我们团队</a></li>
+            <li><a href="contact.html">联系我们</a></li>
+        </ul>
+    </div>
+    <div class="banner"></div>
+    <div class="content">
+        <div class="con1 main">
+            <div class="top">
+                <h2>关于我们</h2>
+                <div class="tit">
+                    <img src="images/line1.png">
+                    About Us
+                    <img src="images/line2.png">
+                </div>
+                <img src="images/logo1.png" class="coffee">
+            </div>
+            <div class="CON">
+                <div class="pic">
+                    <img src="images/house.png">
+                </div>
+                <div class="txt">
+                    <h3>公司简介</h3>
+                    <p></p>
+                    <h4>二十世纪三十年代，巴西咖啡豆生产过剩，剩余的咖啡豆只能当燃料消耗，非常可惜。当巴 西政府向雀巢公司寻求咖啡豆过剩的解决方法的时候，并没有意识到这最终成就了一个历久弥醇 的伟大的咖啡品牌。1930年，巴西咖啡连续经历了几次大丰收，短期内难以完全销售，便向雀巢 求助，寻求令咖啡不失香醇的长期保存方式。咖啡权威——马克思•莫根特尔(Max Morgenthal er)立刻同他的研究队伍着手研究，试图制造一种既可以较好保存咖啡芳香又易溶于热水的"固体咖 啡"。经过在雀巢瑞士实验室长达七年的不懈努力，30年代末，雀巢向市场推出速溶咖啡，“雀巢咖啡”品牌创立。</h4>
+                    <h4>1988年，雀巢通过考察确定云南适宜种植咖啡，决定支持云南省的咖啡种植。随后于1992年在云南思茅地区成立咖啡农艺服务部，帮助当地发展咖啡种植业。1997年，雀巢公司在西双版纳创建试验示范农场，从零开始，让农民得到方方面面的实际培训，大大促进了当地小粒种咖啡豆的发展，并使一个产量低、质量次的咖啡豆产地发展成一个产量高、质量优且已引起全球咖啡界关注的咖啡豆产地。雀巢不仅让农民通过种植咖啡获得了稳定的收入，当地农民通过向雀巢了解国际现货市场价格甚至自己上网查询交易网站的价格，学会根据波动分析销售咖啡的时机。</h4>
+                </div>
+            </div>
+        </div>
+        <img src="images/ban.png" class="pic2">
+        <div class="con2 main">
+            <div class="top">
+                <h2>产品介绍</h2>
+                <div class="tit">
+                    <img src="images/line1.png">
+                    Product
+                    <img src="images/line2.png">
+                </div>
+                <img src="images/logo1.png" class="coffee">
+            </div>
+            <div class="pdt">
+                <div>
+                    <div class="co">
+                        <img src="images/coffee1.png">
+                        <div class="iconfont icon-sousuo sousuo"></div>
+                    </div>
+                    <h3>拿铁咖啡</h3>
+                    <p></p>
+                    <h4>拿铁咖啡是意大利浓缩咖啡(Espresso)与牛奶的经典混合，意大利人也很喜欢把拿铁作为早餐的饮料，带来让人难以忘怀的味道</h4>
+                </div>
+                <div>
+                    <div class="co">
+                        <img src="images/coffee2.png">
+                        <div class="iconfont icon-sousuo sousuo"></div>
+                    </div>
+                    <h3>卡布基诺</h3>
+                    <p></p>
+                    <h4>卡布奇诺是一种加入以同量的意大利特浓咖啡和蒸汽泡沫牛奶相混合的意大利咖啡。象卡布奇诺教会的修士头巾一样，咖啡因此得名</h4>
+                </div>
+                <div>
+                    <div class="co">
+                        <img src="images/coffee3.png">
+                        <div class="iconfont icon-sousuo sousuo"></div>
+                    </div>
+                    <h3>摩卡咖啡</h3>
+                    <p></p>
+                    <h4>摩卡咖啡(CafeMocha)是一种最古老的咖啡，其历史要追溯到咖啡的起源。它是浓缩咖啡、鲜奶油和牛奶混合而成，摩卡得名于有名的摩卡港</h4>
+                </div>
+            </div>
+        </div>
+        <div class="con3">
+            <div class="top">
+                <h2>公司团队</h2>
+                <div class="tit">
+                    <img src="images/line1.png">
+                    Our team
+                    <img src="images/line2.png">
+                </div>
+                <img src="images/logo1.png" class="coffee">
+            </div>
+            <div class="Team main">
+                <div class="introduce">
+                    <img src="images/team1.png">
+                    <div class="name">
+                        <h3>贾斯汀·比伯</h3>
+                        <h4>Justin Bieber</h4>
+                    </div>
+                    <div class="intro">
+                        <h3>贾斯汀·比伯</h3>
+                        <p></p>
+                        <h4>贾斯汀出生于1994年3月1日的加拿大安大略省伦敦的圣若…</h4>
+                    </div>
+                </div>
+                <div class="introduce">
+                    <img src="images/team2.png">
+                    <div class="name">
+                        <h3>查理·普斯</h3>
+                        <h4>Charlie Puth</h4>
+                    </div>
+                    <div class="intro">
+                        <h3>查理·普斯</h3>
+                        <p></p>
+                        <h4>查理·普斯出生于1991年12月2日的美国新泽西州…</h4>
+                    </div>
+                </div>
+                <div class="introduce">
+                    <img src="images/team3.png">
+                    <div class="name">
+                        <h3>艾薇儿·拉维尼</h3>
+                        <h4>Avril Lavigne</h4>
+                    </div>
+                    <div class="intro">
+                        <h3>艾薇儿·拉维尼</h3>
+                        <p></p>
+                        <h4>艾薇儿·拉维尼出生于1984年9月27日的加拿大安大略省贝尔维尔…</h4>
+                    </div>
+                </div>
+                <div class="introduce">
+                    <img src="images/team4.png">
+                    <div class="name">
+                        <h3>泰勒·斯威夫特</h3>
+                        <h4>Taylor Swift</h4>
+                    </div>
+                    <div class="intro">
+                        <h3>泰勒·斯威夫特</h3>
+                        <p></p>
+                        <h4>泰勒·斯威夫特出生于1989年12月13日的美国宾夕法尼亚州…</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="con4 main">
+            <div class="top">
+                <h2>联系我们</h2>
+                <div class="tit">
+                    <img src="images/line1.png">
+                    Contact us
+                    <img src="images/line2.png">
+                </div>
+                <img src="images/logo1.png" class="coffee">
+            </div>
+            <div class="map">
+                <img src="images/map.png">
+                <div class="dizhi">
+                    <div>
+                        <h2>咨询热线</h2>
+                        <h3>Information Hotline</h3>
+                        <h4>重庆 : +86 023-867-7848</h4>
+                        <h3>(09:30~18:30 北京时间)</h3>
+                    </div>
+                    <div>
+                        <h2>公司地址</h2>
+                        <h3>Company address</h3>
+                        <h4>地址 : 重庆大坪龙湖时代天街3号写字楼2407室</h4>
+                        <h3>(09:30~18:30 北京时间)</h3>
+                    </div>
+                    <div>
+                        <h2>公司邮箱</h2>
+                        <h3>E-mail</h3>
+                        <h4>邮箱 : info@haitouglobal.com</h4>
+                        <h3>(09:30~18:30 北京时间)</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="foot main">
+            <p>COPYRIGHT &copy; 重庆DUZU有限公司 | DUZU备案号 33010602001878 号 版权所有：重庆戈登有限公司</p>
+            <img src="images/logo.png">
+        </div>
+    </div>
+    <script>
+        var pdt=document.querySelector(".content .con2 .pdt");
+        var xhr=new XMLHttpRequest();
+        xhr.open("GET","./about.php?type=3");
+        xhr.send(null);
+        xhr.onreadystatechange=function (){
+            if(xhr.readyState==4 && xhr.status==200){
+                var arr1=JSON.parse(xhr.responseText);
+                for(var i=0;i<arr1.length;i++){
+                    var div=document.createElement("div");
+                    var co=document.createElement("div");
+                    co.className="co";
+                    co.setAttribute("index2",arr1[i].id);
+                    co.onclick=function (){
+                        sessionStorage["index2"]=this.getAttribute("index2");
+                        location="./product.html";
+                    }
+                    var img=new Image();
+                    img.src=arr1[i].img1;
+                    var icon=document.createElement("div");
+                    icon.className="iconfont icon-sousuo sousuo";
+                    var h3=document.createElement("h3");
+                    h3.innerHTML=arr1[i].Cname;
+                    var p=document.createElement("p");
+                    var h4=document.createElement("h4");
+                    h4.innerHTML=arr1[i].main;
+                    co.appendChild(img);
+                    co.appendChild(icon);
+                    div.appendChild(co);
+                    div.appendChild(h3);
+                    div.appendChild(p);
+                    div.appendChild(h4);
+                    pdt.appendChild(div);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

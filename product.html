@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/public.css">
+    <style>
+        html,body{
+            width:100%;
+        }
+        .head ul li:nth-child(3){
+            border-bottom:6px solid #866961;
+        }
+        .head ul li:nth-child(3) a{
+            color:#866961;
+        }
+        .banner{
+            width:100%;
+            height:400px;
+            position:relative;
+            overflow:hidden;
+        }
+        .banner .Ban{
+            width:100%;
+            height:1200px;
+            transition:all 0.2s;
+            position:absolute;
+            top:0;
+            left:0;
+        }
+        .banner .Ban img{
+            display:block;
+            width:100%;
+            height:400px;
+        }
+        .content .conh{
+            display:flex;
+            justify-content:space-between;
+            font-family:微软雅黑;
+            margin:0px 59px;
+        }
+        .content .conh{
+            border-bottom:1px solid #d5d5d5;
+            margin-top:37px;
+            margin-bottom:25px;
+            padding-bottom:6px;
+        }
+        .content .conh .cof{
+            width:240px;
+            display:flex;
+            justify-content:space-between;
+        }
+        .content .conh .cof div{
+            cursor:pointer;
+        }
+        .content .conh .cof h3{
+            font-size:16px;
+            color:#333;
+        }
+        .content .conh .cof h3 span{
+            display:inline-block;
+            height:10px;
+            border-left:2px solid #866961;
+            margin-right:6px;
+        }
+        .content .conh .cof h4{
+            font-size:12px;
+            color:#999;
+        }
+        .content .conh .add{
+            font-size:14px;
+            color:#333;
+            padding-top:20px;
+        }
+        .content .conh .add span{
+            color:#999;
+        }
+        .content .con{
+            height:505px;
+            display:flex;
+            justify-content:space-between;
+            font-family:微软雅黑;
+            margin:0px 59px;
+            margin-bottom:39px;
+        }
+        .content .con .txt{
+            width:528px;
+            text-indent:2em;
+            display:flex;
+            flex-direction:column;
+            justify-content:space-around;
+            font-size:16px;
+            color:#333;
+            line-height:32px;
+        }
+    </style>
+</head>
+<body>
+    <div class="head main">
+        <img src="images/logo.png">
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="about.html">关于我们</a></li>
+            <li><a href="product.html">产品介绍</a></li>
+            <li><a href="team.html">我们团队</a></li>
+            <li><a href="contact.html">联系我们</a></li>
+        </ul>
+    </div>
+    <div class="banner">
+        <div class="Ban">
+            <img src="images/ntban.png">
+            <img src="images/kbjnban.png">
+            <img src="images/mkban.png">
+        </div>
+    </div>
+    <div class="content main">
+        <div class="conh">
+            <div class="cof">
+                <div index="1">
+                    <h3><span></span>拿铁咖啡</h3>
+                    <h4>Cafe Latte</h4>
+                </div>
+                <div index="2">
+                    <h3><span></span>卡布基诺</h3>
+                    <h4>Cappuccino</h4>
+                </div>
+                <div index="3">
+                    <h3><span></span>摩卡咖啡</h3>
+                    <h4>Mocha Coffee</h4>
+                </div>
+            </div>
+            <div class="add">当前位置&gt;<span>首页&gt;产品介绍&gt;</span><b>拿铁咖啡</b></div>
+        </div>
+        <div class="con"></div>
+    </div>
+    <div class="footer">
+        <div class="foot main">
+            <p>COPYRIGHT &copy; 重庆DUZU有限公司 | DUZU备案号 33010602001878 号 版权所有：重庆戈登有限公司</p>
+            <img src="images/logo.png">
+        </div>
+    </div>
+    <script>
+        var cofds=document.querySelectorAll(".cof div");
+        var b=document.querySelector(".add b");
+        var con=document.querySelector(".content .con");
+        var Ban=document.querySelector(".Ban");
+        for(var i=0;i<cofds.length;i++){
+            cofds[i].onclick=function (){
+                b.innerHTML=this.firstElementChild.innerText;
+                con.innerHTML="";
+                sessionStorage["index2"]=this.getAttribute("index");
+                // num=this.getAttribute("index");
+                var xhr=new XMLHttpRequest();
+                xhr.open("GET","./about.php?type=4&index2="+sessionStorage["index2"]);
+                // xhr.open("GET","./about.php?type=4&index2="+num);
+                xhr.send(null);
+                xhr.onreadystatechange=function (){
+                    if(xhr.readyState==4 && xhr.status==200){
+                        var arr2=JSON.parse(xhr.responseText);
+                        var frag=document.createDocumentFragment();
+                        var img=new Image();
+                        img.src=arr2.img2;
+                        frag.appendChild(img);
+                        var div=document.createElement("div");
+                        div.className="txt";
+                        var main=arr2.con.split("\n");
+                        for(var i=0;i<main.length;i++){
+                            var h3=document.createElement("h3");
+                            h3.innerHTML=main[i];
+                            div.appendChild(h3);
+                        }
+                        frag.appendChild(div);
+                        con.appendChild(frag);
+                    }
+                }
+            }
+            if(cofds[i].getAttribute("index")==sessionStorage["index2"]){
+                cofds[i].onclick();
+            }
+        }
+        var Top=0;
+        setInterval(function (){
+            if(Top==-800){
+                Top=0;
+            }else{
+                Top-=400;
+            }
+            Ban.style.top=Top+"px";
+        },1000)
+        // var xhr=new XMLHttpRequest();
+        // xhr.open("GET","./about.php?type=4&index2="+sessionStorage["index2"]);
+        // xhr.send(null);
+        // xhr.onreadystatechange=function (){
+        //     if(xhr.readyState==4 && xhr.status==200){
+        //         var arr2=JSON.parse(xhr.responseText);
+        //         var frag=document.createDocumentFragment();
+        //         var img=new Image();
+        //         img.src=arr2.img2;
+        //         frag.appendChild(img);
+        //         var div=document.createElement("div");
+        //         div.className="txt";
+        //         var main=arr2.con.split("\n");
+        //         for(var i=0;i<main.length;i++){
+        //             var h3=document.createElement("h3");
+        //             h3.innerHTML=main[i];
+        //             div.appendChild(h3);
+        //         }
+        //         frag.appendChild(div);
+        //         con.appendChild(frag);
+        //     }
+        // }
+    </script>
+</body>
+</html>

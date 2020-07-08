@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/public.css">
+    <style>
+        .head ul li:nth-child(4){
+            border-bottom:6px solid #866961;
+        }
+        .head ul li:nth-child(4) a{
+            color:#866961;
+        }
+        .banner{
+            height:400px;
+            background:url("images/贾斯.png");
+            background-repeat:no-repeat;
+            background-size:100% 100%;
+            transition:all 0.2s;
+        }
+        .content .con{
+            display:flex;
+            justify-content:space-between;
+            font-family:微软雅黑;
+            margin:0px 59px;
+        }
+        .content .con:first-child{
+            border-bottom:1px solid #d5d5d5;
+            margin-top:37px;
+            margin-bottom:25px;
+            padding-bottom:6px;
+        }
+        .content .con .cof h3{
+            font-size:16px;
+            color:#333;
+        }
+        .content .con .cof h3 span{
+            display:inline-block;
+            height:10px;
+            border-left:2px solid #866961;
+            margin-right:6px;
+        }
+        .content .con .cof h4{
+            font-size:12px;
+            color:#999;
+        }
+        .content .con .add{
+            font-size:14px;
+            color:#333;
+            padding-top:20px;
+        }
+        .content .con .add span{
+            color:#999;
+        }
+        .content .con .person{
+            width:598px;
+            display:flex;
+            flex-direction:column;
+            justify-content:space-between;
+        }
+        .content .con .person .staff{
+            height:264px;
+            display:none;
+            flex-direction:column;
+            justify-content:space-between;
+        }
+        .content .con .person .staff h2{
+            font-size:16px;
+            color:#333;
+        }
+        .content .con .person .staff h2 span{
+            font-size:12px;
+        }
+        .content .con .person .staff h3{
+            font-size:14px;
+            color:#999;
+            margin-top:8px;
+        }
+        .content .con .person .staff h4{
+            text-indent:2em;
+            font-size:14px;
+            color:#999;
+            line-height:26px;
+        }
+        .content .con .person .sta{
+            display:flex;
+        }
+        .content .con .person .per{
+            height:294px;
+            display:flex;
+            justify-content:space-between;
+        }
+        .content .con .person .per .introduce div:first-child{
+            height:221px;
+            width:145px;
+        }
+        .content .con .person .per .introduce .name{
+            height:71px;
+            text-align:center;
+            font-family:微软雅黑;
+            font-size:14px;
+            border-top:1px solid #d5d5d5;
+            cursor:pointer;
+        }
+        .content .con .person .per .introduce .name h5{
+            color:#333;
+            padding-top:17px;
+            padding-bottom:6px;
+        }
+        .content .con .person .per .introduce .name h5 span{
+            border-top:1px solid #666;
+            padding-top:17px;
+        }
+        .content .con .person .per .introduce .bianhei{
+            border-top-color:#333;
+            background:#333;
+        }
+        .content .con .person .per .introduce .bianhei h5{
+            color:#fff;
+        }
+        .content .con .person .per .introduce .name h6{
+            color:#999;
+        }
+        .content .con:nth-child(2){
+            margin-bottom:37px;
+        }
+        .content .con .person .per .introduce .chuxian{
+            display:block;
+        }
+        .content .con .person .per .introduce img{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <div class="head main">
+        <img src="images/logo.png">
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="about.html">关于我们</a></li>
+            <li><a href="product.html">产品介绍</a></li>
+            <li><a href="team.html">我们团队</a></li>
+            <li><a href="contact.html">联系我们</a></li>
+        </ul>
+    </div>
+    <div class="banner"></div>
+    <div class="content main">
+        <div class="con">
+            <div class="cof">
+                <h3><span></span>团队介绍</h3>
+                <h4>Team Introduction</h4>
+            </div>
+            <div class="add">当前位置&gt;<span>首页&gt;</span>团队介绍</div>
+        </div>
+        <div class="con">
+            <img src="images/贾斯1.png">
+            <div class="person">
+                <div class="staff sta">
+                    <div>
+                        <h2>贾斯汀<span>-比伯</span></h2>
+                        <h3>DUZU 公司行动总裁</h3>
+                    </div>
+                        <h4>贾斯汀出生于1994年3月1日的加拿大安大略省伦敦的圣若瑟医院，并在安大略省的斯特拉特福成长。小贾的母亲怀孕时年仅17岁，而他的父母结婚10个月后就离婚，因此他从小由自己的母亲、外公和外婆养大。</h4>
+                        <h4>贾斯汀从小对曲棍球、足球和国际象棋感兴趣，并一直追求自己的音乐梦想。他从小自学了钢琴、鼓、吉他和小号。从五岁起他就无师自通，自学了钢琴、打鼓、吉他和小号，华横溢的比伯还非常热爱唱歌，他的歌声清脆而优美。早在2007年贾斯汀12岁时，在斯特拉特福德当地的歌唱比赛中演唱尼欧的歌曲《So Sick》并获得了比赛的第二名。</h4>
+                </div>
+                <div class="staff">
+                    <div>
+                        <h2>查理<span>-普斯</span></h2>
+                        <h3>DUZU 公司行动经理</h3>
+                    </div>
+                        <h4>查理出生于1994年3月1日的加拿大安大略省伦敦的圣若瑟医院，并在安大略省的斯特拉特福成长。小查的母亲怀孕时年仅17岁，而他的父母结婚10个月后就离婚，因此他从小由自己的母亲、外公和外婆养大。</h4>
+                        <h4>查理从小对曲棍球、足球和国际象棋感兴趣，并一直追求自己的音乐梦想。他从小自学了 钢琴、鼓、吉他和小号。从五岁起他就无师自通，自学了钢琴、打鼓、吉他和小号，华横溢的比伯还非常热爱唱歌，他的歌声清脆而优美。早在2007年查理12岁时，在斯特拉特福德当地的歌唱比赛中演唱尼欧的歌曲《So Sick》并获得了比赛的第二名。</h4>
+                </div>
+                <div class="staff">
+                    <div>
+                        <h2>艾薇儿<span>-拉维尼</span></h2>
+                        <h3>DUZU 公司策划</h3>
+                    </div>
+                        <h4>艾薇儿出生于1994年3月1日的加拿大安大略省伦敦的圣若瑟医院，并在安大略省的斯特拉特福成长。小艾的母亲怀孕时年仅17岁，而他的父母结婚10个月后就离婚，因此他从小由自己的母亲、外公和外婆养大。 </h4>
+                        <h4>艾薇儿从小对曲棍球、足球和国际象棋感兴趣，并一直追求自己的音乐梦想。他从小自学了钢琴、鼓、吉他和小号。从五岁起他就无师自通，自学了钢琴、打鼓、吉他和小号，华横溢的艾薇儿还非常热爱唱歌，他的歌声清脆而优美。早在2007年艾薇儿12岁时，在斯特拉特福德当地的歌唱比赛中演唱尼欧的歌曲《So Sick》并获得了比赛的第二名。</h4>
+                </div>
+                <div class="staff">
+                    <div>
+                        <h2>泰勒<span>-斯威夫特</span></h2>
+                        <h3>DUZU 公司总监</h3>
+                    </div>
+                        <h4>泰勒出生于1994年3月1日的加拿大安大略省伦敦的圣若瑟医院，并在安大略省的斯特拉特福成长。小泰的母亲怀孕时年仅17岁，而他的父母结婚10个月后就离婚，因此他从小由自己的母亲、外公和外婆养大。</h4>
+                        <h4>泰勒从小对曲棍球、足球和国际象棋感兴趣，并一直追求自己的音乐梦想。他从小自学了钢琴、鼓、吉他和小号。从五岁起他就无师自通，自学了钢琴、打鼓、吉他和小号，华横溢的泰勒还非常热爱唱歌，他的歌声清脆而优美。早在2007年泰勒12岁时，在斯特拉特福德当地的歌唱比赛中演唱尼欧的歌曲《So Sick》并获得了比赛的第二名。</h4>
+                </div>
+                <div class="per">
+                    <div class="introduce">
+                        <div><img src="images/贾斯2.png" class="chuxian"></div>
+                        <div class="name bianhei" index="0">
+                            <h5><span>贾斯</span>汀·比伯</h5>
+                            <h6>DUZU公司总裁</h6>
+                        </div>
+                    </div>
+                    <div class="introduce">
+                        <div><img src="images/查理2.png"></div>
+                        <div class="name" index="1">
+                            <h5><span>查理</span>·普斯</h5>
+                            <h6>Charlie Puth</h6>
+                        </div>
+                    </div>
+                    <div class="introduce">
+                        <div><img src="images/艾薇2.png"></div>
+                        <div class="name" index="2">
+                            <h5><span>艾薇</span>儿·拉维尼</h5>
+                            <h6>Avril Lavigne</h6>
+                        </div>
+                    </div>
+                    <div class="introduce">
+                        <div><img src="images/泰勒2.png"></div>
+                        <div class="name" index="3">
+                            <h5><span>泰勒</span>·斯威夫特</h5>
+                            <h6>Taylor Swift</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="foot main">
+            <p>COPYRIGHT &copy; 重庆DUZU有限公司 | DUZU备案号 33010602001878 号 版权所有：重庆戈登有限公司</p>
+            <img src="images/logo.png">
+        </div>
+    </div>
+    <script>
+        var itdN=document.querySelectorAll(".introduce .name");
+        var ban=document.querySelector(".banner");
+        var people=document.querySelector(".person");
+        var staffs=document.querySelectorAll(".staff");
+        for(var i=0;i<itdN.length;i++){
+            itdN[i].onclick=function (){
+                var bann=this.firstElementChild.firstElementChild.innerHTML;
+                // ban.style.background='url("images/'+bann+'.png")';
+                people.previousElementSibling.src="images/"+bann+"1.png";
+                var cx=document.querySelector(".chuxian");
+                cx.className=" ";
+                this.previousElementSibling.firstChild.className="chuxian"
+                var bh=document.querySelector(".bianhei");
+                bh.className="name";
+                this.className="name bianhei";
+                var sta=document.querySelector(".sta");
+                sta.className="staff";
+                var index=this.getAttribute("index");
+                staffs[index].className="staff sta"
+            }
+        }
+        var str=['url("images/贾斯.png")','url("images/查理.png")','url("images/艾薇.png")','url("images/泰勒.png")'];
+        var i=0;
+        setInterval(function (){
+            if(i==3){
+                i=0;
+            }else{
+                i+=1;
+            }
+            ban.style.background=str[i];
+        },1000)
+    </script>
+</body>
+</html>
